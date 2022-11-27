@@ -8,9 +8,16 @@ let TodoItemsView = Backbone.View.extend({
       throw new Error("o model nao foi especificado.");
 
     this.model.on("add", this.onAddTodoItem, this);
+    this.model.on("remove", this.onRemoveTodoItem, this);
+  },
+
+  onRemoveTodoItem: function (todoItem) {
+    //o argumento eh o model removido
+    this.$("li#" + todoItem.id).remove();
   },
 
   onAddTodoItem: function (todoItem) {
+    // o argumento eh o model adicionado
     let view = new TodoItemView({ model: todoItem });
     this.$el.append(view.render().$el);
   },
@@ -28,7 +35,8 @@ let TodoItemsView = Backbone.View.extend({
     let $textBox = this.$("#newTodoItem");
 
     if ($textBox.val()) {
-      let todoItem = new TodoItem({ description: $textBox.val() });
+      let todoItem = new TodoItem({ title: $textBox.val() });
+      todoItem.save(); //sincronizando com o server!
       this.model.add(todoItem);
 
       $textBox.val("");
