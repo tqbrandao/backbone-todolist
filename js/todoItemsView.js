@@ -1,7 +1,5 @@
 let TodoItemsView = Backbone.View.extend({
-  tagName: "ul",
-
-  id: "todoItems",
+  id: "todoItemsContainer",
 
   initialize: function (options) {
     if (!(options && options.model))
@@ -19,7 +17,7 @@ let TodoItemsView = Backbone.View.extend({
   onAddTodoItem: function (todoItem) {
     // o argumento eh o model adicionado
     let view = new TodoItemView({ model: todoItem });
-    this.$el.append(view.render().$el);
+    this.$("#todoItems").append(view.render().$el);
   },
 
   events: {
@@ -46,13 +44,17 @@ let TodoItemsView = Backbone.View.extend({
   render: function () {
     let self = this; // mantendo uma referencia a view antes de iterar a colecao (a this keyword vai mudar em cada interacao, apontando pra view que ta sendo iterada no momento)
 
-    this.$el.append("<input type='text' id='newTodoItem' autofocus></input>");
-    this.$el.append("<button id='add'>Add</button>");
+    this.$el.append(
+      "<input type='text' id='newTodoItem' autofocus placeholder='Qual a próxima tarefa?'></input>"
+    );
+    this.$el.append("<button id='add'>Adicionar</button>");
+    this.$el.append("<ul id='todoItems'></ul>");
 
-    this.model.each(function (todoItem) {
-      let view = new TodoItemView({ model: todoItem });
-      self.$el.append(view.render().$el);
-    });
+    // ---- ESSAS LINHAS PASSARAM A SER DESNECESSARIAS QUANDO DECIDIMOS USAR A REST API (USANDO O ADD METHOD, QUE FAZ ISSO AUTOMATICAMENTE)
+    // this.model.each(function (todoItem) {
+    //   let view = new TodoItemView({ model: todoItem });
+    //   self.$el.append(view.render().$el);
+    // });
 
     return this;
   },

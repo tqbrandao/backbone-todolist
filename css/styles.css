@@ -1,12 +1,65 @@
 body {
   padding: 40px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-body,
-p {
-  font-size: 24px;
+.heading-container {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+}
+
+#todoItems {
+  list-style: none;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  padding-left: 0;
+  background: #fff;
+}
+
+#todoItems > li {
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+/* #todoItems > li > label {
+  width: 80%;
+  display: inline-block;
+} */
+
+button {
+  font-size: 14px;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  font-family: inherit;
+}
+
+button#delete {
+  float: right;
+  background-color: #d9534f;
+  padding: 4px 10px;
+}
+
+button#add {
+  background-color: #4f7bd9;
+  padding: 5px 10px;
+  margin-left: 20px;
 }
 
 #todoItems li.completed {
   text-decoration: line-through;
+}
+
+#todoItemsContainer {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#newTodoItem {
+  width: 50%;
+  font-family: inherit;
 }

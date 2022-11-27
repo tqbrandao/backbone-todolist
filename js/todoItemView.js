@@ -30,11 +30,13 @@ let TodoItemView = Backbone.View.extend({
 
     let checked = this.model.get("completed") ? "checked" : "";
     this.$el.html(
-      "<input id='toggle' type='checkbox' " +
+      "<label>" +
+        "<input id='toggle' type='checkbox' " +
         checked +
         "></input> " +
         this.model.escape("title") +
-        "<button id='delete'>Delete</button>"
+        "<button id='delete'>Remover</button>" +
+        "</label>"
     );
     // Usamos o metodo escape ao inves do get por questoes de seguranca. O metodo escape eh igual ao get, mas ele encoda o valor retornado, impedindo que pessoa maliciosa introduza codigo javascript no input field.
 

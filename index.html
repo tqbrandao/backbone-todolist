@@ -10,10 +10,19 @@
     <link rel="stylesheet" href="css/normalize.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="js/lib/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
+    <div class="heading-container">
+      <h1 class="heading-primary">Lista de afazeres - Backbone.js</h1>
+    </div>
     <script src="js/lib/jquery-min.js"></script>
     <script src="js/lib/underscore-min.js"></script>
     <script src="js/lib/backbone-min.js"></script>
@@ -26,6 +35,10 @@
 
     <script src="js/main.js"></script>
 
-    <script type="text/html" id="todoItemTemplate"></script>
+    <!-- <script type="text/html" id="todoItemTemplate">
+      <input type="checkbox" {{#completed}}checked{{/completed}} id="toggle" />
+      {{title}}
+      <button id="delete">Delete</button>
+    </script> -->
   </body>
 </html>
