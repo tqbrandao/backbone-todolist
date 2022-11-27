@@ -3,6 +3,8 @@ body {
   background: #f9f9f9;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }
 
 .heading-container {
@@ -46,8 +48,16 @@ button#delete {
 
 button#add {
   background-color: #4f7bd9;
-  padding: 5px 10px;
-  margin-left: 20px;
+  padding: 7px 15px;
+  margin-left: 10px;
+}
+
+button#add:hover {
+  background-color: #283e6d;
+}
+
+button#delete:hover {
+  background-color: #6d2a28;
 }
 
 #todoItems li.completed {
