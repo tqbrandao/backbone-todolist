@@ -17,7 +17,7 @@ let TodoItemsView = Backbone.View.extend({
   onAddTodoItem: function (todoItem) {
     // o argumento eh o model adicionado
     let view = new TodoItemView({ model: todoItem });
-    this.$("#todoItems").append(view.render().$el);
+    this.$("#todoItems").prepend(view.render().$el);
   },
 
   events: {
